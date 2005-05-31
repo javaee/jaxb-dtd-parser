@@ -2,7 +2,7 @@
  * Copyright (c) 1998 Sun Microsystems, Inc. All Rights Reserved.
  */
 
-package com.sun.dtdparser;
+package com.sun.xml.dtdparser;
 
 
 final class InternalEntity extends EntityDecl {

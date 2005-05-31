@@ -4,7 +4,7 @@
  * Copyright (c) 1998 Sun Microsystems, Inc. All Rights Reserved.
  */
 
-package com.sun.dtdparser;
+package com.sun.xml.dtdparser;
 
 /**
  * Base class for entity declarations as used by the parser.

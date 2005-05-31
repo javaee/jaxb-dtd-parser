@@ -15,7 +15,7 @@
   <shortDescription>API for parsing DTDs</shortDescription>
   <url>http://dtd-parser.dev.java.net/</url>
   
-  <package>com.sun.dtdparser</package>
+  <package>com.sun.xml.dtdparser</package>
 
   <developers>
     <developer>

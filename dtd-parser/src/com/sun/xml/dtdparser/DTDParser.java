@@ -5,7 +5,7 @@
  */
 
 
-package com.sun.dtdparser;
+package com.sun.xml.dtdparser;
 
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
@@ -39,7 +39,7 @@ import java.util.Vector;
  * @author David Brownell
  * @author Janet Koenig
  * @author Kohsuke KAWAGUCHI
- * @version $Id: DTDParser.java,v 1.1 2005-05-15 04:24:19 kohsuke Exp $
+ * @version $Id: DTDParser.java,v 1.1 2005-05-31 22:28:54 kohsuke Exp $
  */
 public class DTDParser {
     public final static String TYPE_CDATA = "CDATA";
