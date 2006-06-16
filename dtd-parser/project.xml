@@ -30,7 +30,15 @@
   <build>
     <nagEmailAddress>kk@kohsuke.org</nagEmailAddress>
     <sourceDirectory>src</sourceDirectory>
-    
+
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <includes>
+          <include>**/*.properties</include>
+        </includes>
+      </resource>
+    </resources>
     <!--unitTestSourceDirectory>src/test</unitTestSourceDirectory>
     <unitTest>
       <includes>
