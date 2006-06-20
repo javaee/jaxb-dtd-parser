@@ -21,4 +21,9 @@
     <mkdir dir="target/renamed-classes"/>
     <javac srcdir="j2se-integration/src" destdir="target/renamed-classes" />
   </target>
+
+  <target name="clean">
+    <delete dir="j2se-integration" />
+    <delete dir="target" />
+  </target>
 </project>
