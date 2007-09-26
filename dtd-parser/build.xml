@@ -14,7 +14,7 @@
     </taskdef>
 
     <prename srcdir="src" destdir="j2se-integration/src">
-      <pattern from="com.sun.xml.dtdparser" to="sun.xml.internal.dtdparser" />
+      <pattern from="com.sun.xml.dtdparser" to="com.sun.xml.internal.dtdparser" />
     </prename>
 
     <!-- sanity test -->
