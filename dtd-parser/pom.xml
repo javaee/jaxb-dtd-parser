@@ -13,6 +13,13 @@
 	<description>SAX-like API for parsing XML DTDs.</description>
 	<url>http://dtd-parser.dev.java.net/</url>
 
+	<scm>
+		<connection>scm:cvs:pserver:guest@cvs.dev.java.net:/cvs:dtd-parser/dtd-parser</connection>
+		<developerConnection>scm:cvs:pserver:username@cvs.dev.java.net:/cvs:dtd-parser/dtd-parser</developerConnection>
+		<url>https://dtd-parser.dev.java.net/source/browse/dtd-parser/dtd-parser</url>
+	</scm>
+
+
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
 		<artifactId>oss-parent</artifactId>
