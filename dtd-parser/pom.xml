@@ -7,7 +7,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.sun.xml.dtd-parser</groupId>
 	<artifactId>dtd-parser</artifactId>
-	<version>1.1-SNAPSHOT</version>
+	<version>1.1</version>
 	<packaging>jar</packaging>
 	<name>DTD Parser</name>
 	<description>SAX-like API for parsing XML DTDs.</description>
@@ -15,7 +15,7 @@
 
 	<scm>
 		<connection>scm:cvs:pserver:guest@cvs.dev.java.net:/cvs:dtd-parser/dtd-parser</connection>
-		<developerConnection>scm:cvs:pserver:username@cvs.dev.java.net:/cvs:dtd-parser/dtd-parser</developerConnection>
+		<developerConnection>scm:cvs:username:lexi@cvs.dev.java.net:/cvs:dtd-parser/dtd-parser</developerConnection>
 		<url>https://dtd-parser.dev.java.net/source/browse/dtd-parser/dtd-parser</url>
 	</scm>
 
