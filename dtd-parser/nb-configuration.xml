@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 
     DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
-    Copyright (c) 1998-2011 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2011 Oracle and/or its affiliates. All rights reserved.
 
     The contents of this file are subject to the terms of either the GNU
     General Public License Version 2 only ("GPL") or the Common Development
@@ -39,6 +40,14 @@
     holder.
 
 -->
-<HTML><BODY>
-<P>   scan DTD stream and generates appropriate events.</P>
-</BODY></HTML>
+<project-shared-configuration>
+    <!--
+This file contains additional configuration written by modules in the NetBeans IDE.
+The configuration is intended to be shared among all the users of project and
+therefore it is assumed to be part of version control checkout.
+Without this configuration present, some functionality in the IDE may be limited or fail altogether.
+-->
+    <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+        <word>versioned</word>
+    </spellchecker-wordlist>
+</project-shared-configuration>
