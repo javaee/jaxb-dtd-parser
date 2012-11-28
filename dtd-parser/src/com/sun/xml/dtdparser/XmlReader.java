@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 1998-2011 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1998-2012 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -47,6 +47,7 @@ import java.io.InputStreamReader;
 import java.io.PushbackInputStream;
 import java.io.Reader;
 import java.util.Hashtable;
+import java.util.Locale;
 
 
 // NOTE:  Add I18N support to this class when JDK gets the ability to
@@ -192,7 +193,7 @@ final class XmlReader extends Reader {
     // returns an encoding name supported by JDK >= 1.1.6
     // for some cases required by the XML spec
     private static String std2java(String encoding) {
-        String temp = encoding.toUpperCase();
+        String temp = encoding.toUpperCase(Locale.ENGLISH);
         temp = (String) charsets.get(temp);
         return temp != null ? temp : encoding;
     }
@@ -335,7 +336,7 @@ final class XmlReader extends Reader {
         // Next must be "l" (and whitespace) else we conclude
         // error and choose UTF-8.
         //
-        if ((c = r.read()) != 'l') {
+        if ((r.read()) != 'l') {
             setEncoding(pb, "UTF-8");
             return;
         }
@@ -772,6 +773,7 @@ final class XmlReader extends Reader {
             super(in);
         }
 
+        @Override
         public int read(char buf [], int offset, int len) throws IOException {
             int i;
 

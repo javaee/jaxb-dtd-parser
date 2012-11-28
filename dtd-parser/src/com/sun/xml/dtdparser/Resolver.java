@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 1998-2011 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1998-2012 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -49,6 +49,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Hashtable;
+import java.util.Locale;
 
 /**
  * This entity resolver class provides a number of utilities which can help
@@ -180,7 +181,7 @@ public class Resolver implements EntityResolver {
         if (contentType != null) {
             int index;
 
-            contentType = contentType.toLowerCase();
+            contentType = contentType.toLowerCase(Locale.ENGLISH);
             index = contentType.indexOf(';');
             if (index != -1) {
                 String attributes;
@@ -319,6 +320,7 @@ public class Resolver implements EntityResolver {
      * @param uri  Used when no alternate copy of the entity is found;
      *             this is the XML "system ID", normally a URI.
      */
+    @Override
     public InputSource resolveEntity(String name, String uri)
             throws IOException {
         InputSource retval;
@@ -326,7 +328,7 @@ public class Resolver implements EntityResolver {
         InputStream stream;
 
         // prefer explicit URI mappings, then bundled resources...
-        if (mappedURI == null && (stream = mapResource(name)) != null) {
+        if (mappedURI == null && (stream = mapResource(name)) != null && id2resource != null) {
             uri = "java:resource:" + (String) id2resource.get(name);
             retval = new InputSource(XmlReader.createReader(stream));
 

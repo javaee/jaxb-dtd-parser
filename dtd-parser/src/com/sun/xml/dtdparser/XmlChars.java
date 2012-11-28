@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 1998-2011 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1998-2012 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -376,17 +376,6 @@ public class XmlChars {
             // added a character ...
             return c == 0x0387;
         }
-    }
-
-    private static boolean isDigit(char c) {
-        // [88] Digit ::= ...
-
-        //
-        // java.lang.Character.isDigit is correct from the XML point
-        // of view except that it allows "fullwidth" digits.
-        //
-        return Character.isDigit(c)
-                && !((c >= 0xff10) && (c <= 0xff19));
     }
 
     private static boolean isExtender(char c) {

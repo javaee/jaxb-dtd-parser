@@ -154,7 +154,7 @@
     <properties>
         <findbugs.skip>false</findbugs.skip>
         <findbugs.threshold>Low</findbugs.threshold>
-        <findbugs.exclude />
+        <findbugs.exclude>${project.basedir}/exclude.xml</findbugs.exclude>
     </properties>
 
 </project>

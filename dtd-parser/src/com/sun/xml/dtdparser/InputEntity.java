@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 1998-2011 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1998-2012 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -50,6 +50,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.Locale;
 
 /**
@@ -183,7 +184,7 @@ public class InputEntity {
             throws SAXException {
 
         next = stack;
-        buf = b;
+        buf = Arrays.copyOf(b, b.length);
         finish = b.length;
         this.name = name;
         this.isPE = isPE;
@@ -634,7 +635,7 @@ public class InputEntity {
                         continue;
 
                     if (white) {
-                        if (whitespaceInvalidMessage != null)
+                        if (whitespaceInvalidMessage != null && errHandler != null)
                             errHandler.error(new SAXParseException(DTDParser.messages.getMessage(locale,
                                     whitespaceInvalidMessage), null));
                         docHandler.ignorableWhitespace(buf, start,
@@ -673,7 +674,7 @@ public class InputEntity {
                 }
             }
             if (white) {
-                if (whitespaceInvalidMessage != null)
+                if (whitespaceInvalidMessage != null && errHandler != null)
                     errHandler.error(new SAXParseException(DTDParser.messages.getMessage(locale,
                             whitespaceInvalidMessage), null));
                 docHandler.ignorableWhitespace(buf, start, last - start);
@@ -824,8 +825,9 @@ public class InputEntity {
             // to get rid of the symbol length constraint, since having
             // the wrong symbol is a fatal error anyway ...
             //
-            if (len > buf.length)
-                fatal("P-077", new Object[]{new Integer(buf.length)});
+            if (len > buf.length) {
+                fatal("P-077", new Object[]{Integer.valueOf(buf.length)});
+            }
 
             fillbuf();
             return peek(next, chars);
@@ -998,7 +1000,9 @@ public class InputEntity {
 
         // not continuable ... e.g. WF errors
         close();
-        errHandler.fatalError(x);
+        if (errHandler != null) {
+            errHandler.fatalError(x);
+        }
         throw x;
     }
 }
