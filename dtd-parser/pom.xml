@@ -3,7 +3,7 @@
 
     DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
-    Copyright (c) 1998-2011 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 1998-2012 Oracle and/or its affiliates. All rights reserved.
 
     The contents of this file are subject to the terms of either the GNU
     General Public License Version 2 only ("GPL") or the Common Development
@@ -41,9 +41,9 @@
 
 -->
 <project
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.sun.xml.dtd-parser</groupId>
@@ -63,7 +63,7 @@
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
-        <version>6</version>
+        <version>7</version>
     </parent>
 
     <licenses>
@@ -108,34 +108,34 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-				<version>2.4</version>
+                <version>2.4</version>
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
                 </configuration>
             </plugin>
-		<plugin>
-			<groupId>org.codehaus.mojo</groupId>
-			<artifactId>findbugs-maven-plugin</artifactId>
-			<version>2.5.1</version>
-			<configuration>
-				<skip>${findbugs.skip}</skip>
-				<threshold>${findbugs.threshold}</threshold>
-				<findbugsXmlWithMessages>true</findbugsXmlWithMessages>
-				<excludeFilterFile>
-					${findbugs.exclude}
-				</excludeFilterFile>
-				<fork>true</fork>
-				<jvmArgs>-Xms64m -Xmx256m</jvmArgs>    
-			</configuration>
-			<dependencies>
-				<dependency>
-					<groupId>org.glassfish.findbugs</groupId>
-					<artifactId>findbugs</artifactId>
-					<version>1.0</version>
-				</dependency>
-			</dependencies>
-		</plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>2.5.2</version>
+                <configuration>
+                    <skip>${findbugs.skip}</skip>
+                    <threshold>${findbugs.threshold}</threshold>
+                    <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+                    <excludeFilterFile>
+                        ${findbugs.exclude}
+                    </excludeFilterFile>
+                    <fork>true</fork>
+                    <jvmArgs>-Xms64m -Xmx256m</jvmArgs>    
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.glassfish.findbugs</groupId>
+                        <artifactId>findbugs</artifactId>
+                        <version>1.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
         </plugins>
     </build>
 
@@ -143,6 +143,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-changes-plugin</artifactId>
+                <version>2.7.1</version>
                 <configuration>
                     <xmlPath>${basedir}/xdocs/changes.xml</xmlPath>
                 </configuration>
