@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 1998-2012 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1998-2013 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -164,11 +164,12 @@ public class InputEntity {
             InputStream bytes = in.getByteStream();
 
             if (bytes == null)
-                reader = XmlReader.createReader(new URL(in.getSystemId())
-                        .openStream());
+                if (Boolean.valueOf(System.getProperty("enableExternalEntityProcessing")))
+                    reader = XmlReader.createReader(new URL(in.getSystemId()).openStream());
+                else
+                    fatal("P-082", new Object[] {in.getSystemId()});
             else if (in.getEncoding() != null)
-                reader = XmlReader.createReader(in.getByteStream(),
-                        in.getEncoding());
+                reader = XmlReader.createReader(in.getByteStream(), in.getEncoding());
             else
                 reader = XmlReader.createReader(in.getByteStream());
         }
