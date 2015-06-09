@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 1998-2012 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1998-2015 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -58,15 +58,15 @@ import java.util.logging.Logger;
 
 /**
  * This implements parsing of XML 1.0 DTDs.
- * <p/>
+ * <p>
  * This conforms to the portion of the XML 1.0 specification related to the
  * external DTD subset.
- * <p/>
+ * <p>
  * For multi-language applications (such as web servers using XML processing to
  * create dynamic content), a method supports choosing a locale for parser
  * diagnostics which is both understood by the message recipient and supported
  * by the parser.
- * <p/>
+ * <p>
  * This parser produces a stream of parse events. It supports some features
  * (exposing comments, CDATA sections, and entity references) which are not
  * required to be reported by conformant XML processors.
@@ -965,7 +965,7 @@ public class DTDParser {
      * NMTOKEN(S) are Nmtokens <LI> ENUMERATION values match one of the tokens
      * <LI> NOTATION values match a notation name <LI> ENTITIY(IES) values match
      * an unparsed external entity </UL>
-     * <p/>
+     * <p>
      * <P> Separately, make sure IDREF values match some ID provided in the
      * document (in the afterRoot method).
      */

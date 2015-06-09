@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 1998-2012 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1998-2015 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -109,7 +109,7 @@ public interface DTDEventListener extends EventListener {
     /**
      * Receive notification of an external parsed general entity
      * declaration event.
-     * <p/>
+     * <p>
      * <p>If a system identifier is present, and it is a relative URL, the
      * parser will have resolved it fully before passing it through this
      * method to a listener.</p>
@@ -142,7 +142,7 @@ public interface DTDEventListener extends EventListener {
     /**
      * Receive notification of an external parameter entity declaration
      * event.
-     * <p/>
+     * <p>
      * <p>If a system identifier is present, and it is a relative URL, the
      * parser will have resolved it fully before passing it through this
      * method to a listener.</p>
@@ -179,7 +179,7 @@ public interface DTDEventListener extends EventListener {
 
     /**
      * Receive notification that a comment has been read.
-     * <p/>
+     * <p>
      * <P> Note that processing instructions are the mechanism designed
      * to hold information for consumption by applications, not comments.
      * XML systems may rely on applications being able to access information
@@ -194,17 +194,17 @@ public interface DTDEventListener extends EventListener {
 
     /**
      * Receive notification of character data.
-     * <p/>
+     * <p>
      * <p>The Parser will call this method to report each chunk of
      * character data.  SAX parsers may return all contiguous character
      * data in a single chunk, or they may split it into several
      * chunks; however, all of the characters in any single event
      * must come from the same external entity, so that the Locator
      * provides useful information.</p>
-     * <p/>
+     * <p>
      * <p>The application must not attempt to read from the array
      * outside of the specified range.</p>
-     * <p/>
+     * <p>
      * <p>Note that some parsers will report whitespace using the
      * ignorableWhitespace() method rather than this one (validating
      * parsers must do so).</p>
@@ -221,18 +221,18 @@ public interface DTDEventListener extends EventListener {
 
     /**
      * Receive notification of ignorable whitespace in element content.
-     * <p/>
+     * <p>
      * <p>Validating Parsers must use this method to report each chunk
      * of ignorable whitespace (see the W3C XML 1.0 recommendation,
      * section 2.10): non-validating parsers may also use this method
      * if they are capable of parsing and using content models.</p>
-     * <p/>
+     * <p>
      * <p>SAX parsers may return all contiguous whitespace in a single
      * chunk, or they may split it into several chunks; however, all of
      * the characters in any single event must come from the same
      * external entity, so that the Locator provides useful
      * information.</p>
-     * <p/>
+     * <p>
      * <p>The application must not attempt to read from the array
      * outside of the specified range.</p>
      *
@@ -294,7 +294,7 @@ public interface DTDEventListener extends EventListener {
      *                         this elemen has child content model. The actual content model will
      *                         be reported by childElement, startModelGroup, endModelGroup, and
      *                         connector methods. Possible call sequences are:
-     *                         <p/>
+     *                         <p>
      *                         START := MODEL_GROUP
      *                         MODEL_GROUP := startModelGroup TOKEN (connector TOKEN)* endModelGroup
      *                         TOKEN := childElement
@@ -315,8 +315,8 @@ public interface DTDEventListener extends EventListener {
     /**
      * For each entry in an ATTLIST declaration,
      * this event will be fired.
-     * <p/>
-     * <p/>
+     * <p>
+     * <p>
      * DTD allows the same attributes to be declared more than
      * once, and in that case the first one wins. I think
      * this method will be only fired for the first one,
@@ -344,8 +344,8 @@ public interface DTDEventListener extends EventListener {
 
     /**
      * Connectors in one model group is guaranteed to be the same.
-     * <p/>
-     * <p/>
+     * <p>
+     * <p>
      * IOW, you'll never see an event sequence like (a|b,c)
      */
     public void connector(short connectorType) throws SAXException;

@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 1998-2012 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1998-2015 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -62,7 +62,7 @@ public class XmlChars {
      * documents containing only Unicode.  (The <code>char</code> datatype
      * in the Java Programming Language represents Unicode characters,
      * including unpaired surrogates.)
-     * <p/>
+     * <p>
      * <P> In XML, UCS-4 characters can also be encoded by the use of
      * <em>character references</em> such as <b>&amp;#x12345678;</b>, which
      * happens to refer to a character that is disallowed in XML documents.

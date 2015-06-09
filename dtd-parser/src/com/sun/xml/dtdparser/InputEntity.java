@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 1998-2013 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1998-2015 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -57,11 +57,11 @@ import java.util.Locale;
 /**
  * This is how the parser talks to its input entities, of all kinds.
  * The entities are in a stack.
- * <p/>
+ * <p>
  * <P> For internal entities, the character arrays are referenced here,
  * and read from as needed (they're read-only).  External entities have
  * mutable buffers, that are read into as needed.
- * <p/>
+ * <p>
  * <P> <em>Note:</em> This maps CRLF (and CR) to LF without regard for
  * whether it's in an external (parsed) entity or not.  The XML 1.0 spec
  * is inconsistent in explaining EOL handling; this is the sensible way.
@@ -401,10 +401,10 @@ public class InputEntity {
     /**
      * normal content; whitespace in markup may be handled
      * specially if the parser uses the content model.
-     * <p/>
+     * <p>
      * <P> content terminates with markup delimiter characters,
      * namely ampersand (&amp;amp;) and left angle bracket (&amp;lt;).
-     * <p/>
+     * <p>
      * <P> the document handler's characters() method is called
      * on all the content found
      */
@@ -564,11 +564,11 @@ public class InputEntity {
 
 
     /**
-     * CDATA -- character data, terminated by "]]>" and optionally
+     * CDATA -- character data, terminated by {@code "]]>"} and optionally
      * including unescaped markup delimiters (ampersand and left angle
      * bracket).  This should otherwise be exactly like character data,
      * modulo differences in error report details.
-     * <p/>
+     * <p>
      * <P> The document handler's characters() or ignorableWhitespace()
      * methods are invoked on all the character data found
      *
@@ -718,7 +718,7 @@ public class InputEntity {
 
     /**
      * whitespace in markup (flagged to app, discardable)
-     * <p/>
+     * <p>
      * <P> the document handler's ignorableWhitespace() method
      * is called on all the whitespace found
      */
@@ -776,7 +776,7 @@ public class InputEntity {
     /**
      * returns false iff 'next' string isn't as provided,
      * else skips that text and returns true.
-     * <p/>
+     * <p>
      * <P> NOTE:  two alternative string representations are
      * both passed in, since one is faster.
      */

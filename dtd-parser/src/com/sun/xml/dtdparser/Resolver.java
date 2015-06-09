@@ -1,7 +1,7 @@
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright (c) 1998-2012 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1998-2015 Oracle and/or its affiliates. All rights reserved.
  *
  * The contents of this file are subject to the terms of either the GNU
  * General Public License Version 2 only ("GPL") or the Common Development
@@ -57,46 +57,46 @@ import java.util.Locale;
  * managment of external parsed entities in XML.  These are commonly used
  * to hold markup declarations that are to be used as part of a Document
  * Type Declaration (DTD), or to hold text marked up with XML.
- * <p/>
+ * <p>
  * <P> Features include: <UL>
- * <p/>
+ *
  * <LI> Static factory methods are provided for constructing SAX InputSource
  * objects from Files, URLs, or MIME objects.  This eliminates a class of
- * error-prone coding in applications.
- * <p/>
- * <LI> Character encodings for XML documents are correctly supported: <UL>
- * <p/>
+ * error-prone coding in applications.</LI>
+ *
+ * <LI> Character encodings for XML documents are correctly supported:<UL>
+ *
  * <LI> The encodings defined in the RFCs for MIME content types
  * (2046 for general MIME, and 2376 for XML in particular), are
  * supported, handling <em>charset=...</em> attributes and accepting
- * content types which are known to be safe for use with XML;
- * <p/>
+ * content types which are known to be safe for use with XML;</LI>
+ *
  * <LI> The character encoding autodetection algorithm identified
  * in the XML specification is used, and leverages all of
- * the JDK 1.1 (and later) character encoding support.
- * <p/>
+ * the JDK 1.1 (and later) character encoding support.</LI>
+ *
  * <LI> The use of MIME typing may optionally be disabled, forcing the
  * use of autodetection, to support web servers which don't correctly
  * report MIME types for XML.  For example, they may report text that
  * is encoded in EUC-JP as being US-ASCII text, leading to fatal
- * errors during parsing.
- * <p/>
+ * errors during parsing.</LI>
+ *
  * <LI> The InputSource objects returned by this class always
  * have a <code>java.io.Reader</code> available as the "character
- * stream" property.
- * <p/>
- * </UL>
- * <p/>
+ * stream" property.</LI>
+ *
+ * </UL></LI>
+ *
  * <LI> Catalog entries can map public identifiers to Java resources or
  * to local URLs.  These are used to reduce network dependencies and loads,
  * and will often be used for external DTD components.  For example, packages
  * shipping DTD files as resources in JAR files can eliminate network traffic
  * when accessing them, and sites may provide local caches of common DTDs.
  * Note that no particular catalog syntax is supported by this class, only
- * the notion of a set of entries.
- * <p/>
+ * the notion of a set of entries.</LI>
+ *
  * </UL>
- * <p/>
+ * <p>
  * <P> Subclasses can perform tasks such as supporting new URI schemes for
  * URIs which are not URLs, such as URNs (see RFC 2396) or for accessing
  * MIME entities which are part of a <em>multipart/related</em> group
@@ -142,7 +142,7 @@ public class Resolver implements EntityResolver {
     }
 
     /**
-     * Returns an input source, using the MIME type information and URL
+     * <p>Returns an input source, using the MIME type information and URL
      * scheme to statically determine the correct character encoding if
      * possible and otherwise autodetecting it.  MIME carefully specifies
      * the character encoding defaults, and how attributes of the content
@@ -150,18 +150,18 @@ public class Resolver implements EntityResolver {
      * (UTF-8 and UTF-16), and includes an XML declaration which can be
      * used to internally label most documents encoded using US-ASCII
      * supersets (such as Shift_JIS, EUC-JP, ISO-2022-*, ISO-8859-*, and
-     * more).
-     * <p/>
-     * <P> This method can be used to access XML documents which do not
+     * more).</p>
+     *
+     * <p> This method can be used to access XML documents which do not
      * have URIs (such as servlet input streams, or most JavaMail message
      * entities) and to support access methods such as HTTP POST or PUT.
-     * (URLs normally return content using the GET method.)
-     * <p/>
-     * <P> <em> The caller should set the system ID in order for relative URIs
+     * (URLs normally return content using the GET method.)</p>
+     *
+     * <p> <em> The caller should set the system ID in order for relative URIs
      * found in this document to be interpreted correctly.</em> In some cases,
      * a custom resolver will need to be used; for example, documents
      * may be grouped in a single MIME "multipart/related" bundle, and
-     * relative URLs would refer to other documents in that bundle.
+     * relative URLs would refer to other documents in that bundle.</p>
      *
      * @param contentType The MIME content type for the source for which
      *                    an InputSource is desired, such as <em>text/xml;charset=utf-8</em>.
@@ -311,7 +311,7 @@ public class Resolver implements EntityResolver {
      * consulted.  If no mapping is found there, a catalog mapping names
      * to java resources is consulted.  Finally, if neither mapping found
      * a copy of the entity, the specified URI is used.
-     * <p/>
+     * <p>
      * <P> When a URI is used, <a href="#createInputSource">
      * createInputSource</a> is used to correctly deduce the character
      * encoding used by this entity.  No MIME type checking is done.
@@ -440,7 +440,7 @@ public class Resolver implements EntityResolver {
      * included in XML documents.  This mechanism should most typically be
      * used for Document Type Definitions (DTDs), where the public IDs are
      * formally managed and versioned.
-     * <p/>
+     * <p>
      * <P> If a mapping to a URI has been provided, that mapping takes
      * precedence over this one.
      *
