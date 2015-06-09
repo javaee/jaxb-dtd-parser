@@ -40,24 +40,21 @@
     holder.
 
 -->
-<project
-    xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.sun.xml.dtd-parser</groupId>
     <artifactId>dtd-parser</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
     <packaging>jar</packaging>
     <name>DTD Parser</name>
     <description>SAX-like API for parsing XML DTDs.</description>
     <url>http://dtd-parser.java.net/</url>
 
     <scm>
-        <url>http://java.net/projects/dtd-parser/sources/svn/show/trunk/</url>
-        <connection>scm:svn:https://svn.java.net/svn/dtd-parser~svn/trunk</connection>
-        <developerConnection>scm:svn:https://svn.java.net/svn/dtd-parser~svn/trunk</developerConnection>
+        <url>http://java.net/projects/dtd-parser/sources/svn/show/tags/dtd-parser-1.2</url>
+        <connection>scm:svn:https://svn.java.net/svn/dtd-parser~svn/tags/dtd-parser-1.2</connection>
+        <developerConnection>scm:svn:https://svn.java.net/svn/dtd-parser~svn/tags/dtd-parser-1.2</developerConnection>
     </scm>
 
     <parent>
