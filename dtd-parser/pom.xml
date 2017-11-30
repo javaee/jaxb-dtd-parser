@@ -52,15 +52,16 @@
     <url>http://dtd-parser.java.net/</url>
 
     <scm>
-        <url>http://java.net/projects/dtd-parser/sources/svn/show/trunk/</url>
-        <connection>scm:svn:https://svn.java.net/svn/dtd-parser~svn/trunk</connection>
-        <developerConnection>scm:svn:https://svn.java.net/svn/dtd-parser~svn/trunk</developerConnection>
+        <connection>scm:git:ssh://git@github.com/javaee/jaxb-dtd-parser.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/javaee/jaxb-dtd-parser.git</developerConnection>
+        <url>https://github.com/javaee/jaxb-dtd-parser</url>
+        <tag>HEAD</tag>
     </scm>
 
     <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
+        <groupId>net.java</groupId>
+        <artifactId>jvnet-parent</artifactId>
+        <version>5</version>
     </parent>
 
     <licenses>
