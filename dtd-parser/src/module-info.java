@@ -41,7 +41,7 @@
 /**
  * SAX-like API for parsing XML DTDs.
  */
-module com.sun.xml.bind.jaxbruntime {
+module com.sun.xml.dtdparser {
 
     requires java.xml;
     requires java.logging;
