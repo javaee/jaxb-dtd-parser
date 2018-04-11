@@ -45,15 +45,15 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.sun.xml.dtd-parser</groupId>
     <artifactId>dtd-parser</artifactId>
-    <version>1.3-SNAPSHOT</version>
+    <version>1.4-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>DTD Parser</name>
     <description>SAX-like API for parsing XML DTDs.</description>
     <url>http://dtd-parser.java.net/</url>
 
     <scm>
-        <connection>scm:git:ssh://git@github.com/javaee/jaxb-dtd-parser.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/javaee/jaxb-dtd-parser.git</developerConnection>
+        <connection>scm:git:git@github.com/javaee/jaxb-dtd-parser.git</connection>
+        <developerConnection>scm:git:git@github.com/javaee/jaxb-dtd-parser.git</developerConnection>
         <url>https://github.com/javaee/jaxb-dtd-parser</url>
         <tag>HEAD</tag>
     </scm>
@@ -75,14 +75,9 @@
 
     <developers>
         <developer>
-            <id>snajper</id>
-            <name>Martin Grebac</name>
-            <email>martin.grebac@oracle.com</email>
-        </developer>
-        <developer>
-            <id>lexi</id>
-            <name>Aleksei Valikov</name>
-            <email>valikov@gmx.net</email>
+            <id>bravehorsie</id>
+            <name>Roman Grigoriadi</name>
+            <email>Roman.Grigoriadi@oracle.com</email>
         </developer>
     </developers>
 
@@ -95,6 +90,7 @@
 
     <build>
         <sourceDirectory>src</sourceDirectory>
+
         <resources>
             <resource>
                 <directory>src</directory>
@@ -103,11 +99,34 @@
                 </includes>
             </resource>
         </resources>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.7.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.glassfish.copyright</groupId>
+                    <artifactId>glassfish-copyright-maven-plugin</artifactId>
+                    <version>1.49</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>findbugs-maven-plugin</artifactId>
+                    <version>3.0.5</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
             <plugin>
                 <groupId>org.glassfish.copyright</groupId>
                 <artifactId>glassfish-copyright-maven-plugin</artifactId>
-                <version>1.29</version>
                 <configuration>
                     <templateFile>${project.basedir}/copyright.txt</templateFile>
                     <excludeFile>${project.basedir}/copyright-exclude</excludeFile>
@@ -123,16 +142,14 @@
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.4</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
-                <version>2.5.2</version>
                 <configuration>
                     <skip>${findbugs.skip}</skip>
                     <threshold>${findbugs.threshold}</threshold>
@@ -152,6 +169,7 @@
                 </dependencies>
             </plugin>
         </plugins>
+
     </build>
 
     <reporting>
@@ -173,6 +191,7 @@
     </properties>
 
     <profiles>
+
         <profile>
             <id>jdk9-setup</id>
             <activation>
@@ -203,10 +222,10 @@
                                     <goal>compile</goal>
                                 </goals>
                                 <configuration>
-                                    <source>1.7</source>
-                                    <target>1.7</target>
+                                    <source>1.8</source>
+                                    <target>1.8</target>
                                     <jdkToolchain>
-                                        <version>1.7</version>
+                                        <version>1.8</version>
                                     </jdkToolchain>
                                     <excludes>
                                         <exclude>module-info.java</exclude>
@@ -218,6 +237,29 @@
                 </plugins>
             </build>
         </profile>
+
+        <profile>
+            <id>jvnet-release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
     </profiles>
 
 </project>
