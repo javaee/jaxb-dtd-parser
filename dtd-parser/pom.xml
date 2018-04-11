@@ -143,8 +143,8 @@
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -222,10 +222,10 @@
                                     <goal>compile</goal>
                                 </goals>
                                 <configuration>
-                                    <source>1.8</source>
-                                    <target>1.8</target>
+                                    <source>1.7</source>
+                                    <target>1.7</target>
                                     <jdkToolchain>
-                                        <version>1.8</version>
+                                        <version>1.7</version>
                                     </jdkToolchain>
                                     <excludes>
                                         <exclude>module-info.java</exclude>
